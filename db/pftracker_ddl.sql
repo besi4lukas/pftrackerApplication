@@ -9,7 +9,7 @@ CREATE TABLE public.users (
     updated_at TIMESTAMP NOT NULL DEFAULT current_timestamp
 );
 
-INSERT INTO public.users(email, passcode, role, created_at, updated_at) VALUES ("kb@example.com", 123456, "admin", "2023-06-20 19:47:43", "2023-06-20 19:47:43")
+INSERT INTO public.users(email, passcode, role, created_at, updated_at) VALUES ('kb@example.com', 123456, 'admin', NOW(), NOW());
 
 -- budgets table
 -- this table contains all the users budget
@@ -22,4 +22,4 @@ CREATE TABLE public.budgets (
     updated_at TIMESTAMP NOT NULL DEFAULT current_timestamp
 );
 
-INSERT INTO public.budgets(userId, budgetType, budgetData, created_at, updated_at) VALUES (1, "ZERO_SCHEME", "{tasks: { groceries: { value: 200}, gas: { value: 60} } }", "2023-06-20 19:47:43", "2023-06-20 19:47:43")
+INSERT INTO public.budgets(userId, budgetType, budgetData, created_at, updated_at) VALUES (1, 'ZERO_SCHEME', '{"tasks": { "groceries": { "value": 200}, "gas": { "value": 60} } }', NOW(), NOW());

@@ -12,7 +12,7 @@ services:
     volumes:
       - ./db/pftracker_ddl.sql:/docker-entrypoint-initdb.d/pftracker_ddl.sql
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "dpca"]
+      test: ["CMD", "pg_isready", "-U", "pftdb"]
       interval: 5s
       retries: 5
     restart: unless-stopped
