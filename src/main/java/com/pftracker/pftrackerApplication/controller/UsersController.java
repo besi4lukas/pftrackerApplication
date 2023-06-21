@@ -1,2 +1,4 @@
-package com.pftracker.pftrackerApplication.controller;public class UsersController {
+package com.pftracker.pftrackerApplication.controller;
+
+public class UsersController {
 }

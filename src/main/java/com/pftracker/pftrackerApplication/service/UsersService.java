@@ -1,2 +1,4 @@
-package com.pftracker.pftrackerApplication.service;public class UsersService {
+package com.pftracker.pftrackerApplication.service;
+
+public class UsersService {
 }
