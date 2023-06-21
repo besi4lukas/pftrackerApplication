@@ -1,9 +1,18 @@
+version: '3'
+
 services:
-  postgres:
-    image: 'postgres:latest'
+  db:
+    image: postgres:13.5
     environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+      POSTGRES_USER: pftdb
+      POSTGRES_PASSWORD: pftdb
+      POSTGRES_DB: pftdb
     ports:
-      - '5432'
+      - 5432:5432
+    volumes:
+      - ./db/pftracker_ddl.sql:/docker-entrypoint-initdb.d/pftracker_ddl.sql
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "dpca"]
+      interval: 5s
+      retries: 5
+    restart: unless-stopped
