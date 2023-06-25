@@ -2,6 +2,7 @@ package com.pftracker.pftrackerApplication.controller;
 
 import com.pftracker.pftrackerApplication.model.Users;
 import com.pftracker.pftrackerApplication.service.UsersService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.webjars.NotFoundException;
@@ -10,8 +11,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/users")
+@Tag(name = "Users", description = "CRUD API for Users")
 public class UsersController {
-    UsersService usersService;
+    private final UsersService usersService;
 
     public UsersController(UsersService usersService){
         this.usersService = usersService;

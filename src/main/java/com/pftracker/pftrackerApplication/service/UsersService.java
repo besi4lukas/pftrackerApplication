@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public class UsersService {
 
-    UsersRepository usersRepository;
+    private final UsersRepository usersRepository;
 
     public UsersService (UsersRepository usersRepository){
         this.usersRepository = usersRepository;
