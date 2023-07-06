@@ -1,11 +1,14 @@
 package com.pftracker.pftrackerApplication.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
 import java.time.LocalDateTime;
 
+import lombok.*;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "budgets")
 public class Budgets {
@@ -14,14 +17,14 @@ public class Budgets {
     @Column(name = "budgetId")
     private Long budgetId;
 
-    @Column(name = "userId", nullable = false)
+    @Column(name = "userid", nullable = false)
     private Long userId;
 
     @Column(name = "budgettype", nullable = false)
     private String budgettype;
 
-    @Column(name = "budgedata", nullable = false)
-    private Long budgetdata;
+    @Column(name = "budgetdata", nullable = false)
+    private String budgetdata;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime created_at;
